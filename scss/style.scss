@@ -1,0 +1,210 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.weather{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(20, 12, 64);
+
+  /*----------------------------------------*/
+  /*---------------CONTAINER----------------*/
+  /*----------------------------------------*/
+
+  &__container{
+    position: relative;
+    width: 350px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 4px white;
+    backdrop-filter: var(-webkit-backdrop-filter);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 25px 30px;
+    overflow: hidden;
+    border-radius: 18px;
+    transition: .6s ease-out;
+  }
+
+  /*-------------------------------------------------*/
+  /*---------------CONTAINER BUSCADOR----------------*/
+  /*-------------------------------------------------*/
+
+  &__search{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--icon{
+      color: rgb(227, 227, 227);
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    &--input{
+      color:rgb(192, 181, 254);
+      width: 80%;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding-left: 25px;
+      background: none;
+
+      &::placeholder{
+        font-size: 20px;
+        font-weight: 500;
+        color: rgb(221, 221, 221);
+        text-transform: capitalize;
+      }
+
+      &:hover{
+        border: none;
+      }
+    }
+
+    &--btn{
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      color: rgb(227, 227, 227);
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 50%;
+      font-size: 20px;
+
+      &:hover{
+        color: rgb(221, 236, 255);
+        background: rgba(226, 226, 226, 0.2);
+      }
+    }
+  }
+
+  /*-------------------------------------------------*/
+  /*----------------CONTAINER ERROR------------------*/
+  /*-------------------------------------------------*/
+
+  &__error{
+    width: 100%;
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+
+    &--img{
+      width: 70%;
+    }
+
+    &--text{
+      color: rgb(227, 227, 227);
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  }
+
+  .fadeIn{
+    animation: .5s fadeIn forwards;
+    animation-delay: .5s;
+  }
+  @keyframes fadeIn {
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+   /*---------------------------------------------------*/
+  /*---------------CONTAINER INFORMACIÓN----------------*/
+  /*----------------------------------------------------*/
+
+  &__info{
+    text-align: center;
+
+    &--img{
+      width: 60%;
+      margin-top: 40px;
+    }
+
+    &--temperature{
+      position: relative;
+      color: rgb(227, 227, 227);
+      font-size: 3rem;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-left: -16px;
+
+      & span{
+        position: absolute;
+        font-size: 1.5rem;
+        margin-left: 4px;
+      }
+    }
+
+    &--text{
+      color: rgb(227, 227, 227);
+      font-size: 22px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+
+   /*--------------------------------------------------------*/
+  /*---------------CONTAINER HUMEDAD Y VIENTO----------------*/
+  /*---------------------------------------------------------*/
+
+  &__details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    &--humidity,
+    &--wind{
+      display: flex;
+      align-items: center;
+      width: 50%;
+      height: 100px;
+
+      & i{
+        color: rgb(227, 227, 227);
+        font-size: 26px;
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+    }
+
+    &--humidity{
+      padding-left: 20px;
+      justify-content: flex-start;
+    }
+
+    &--wind{
+      padding-right: 20px;
+      justify-content: flex-end;
+    }
+
+    &--info{
+
+      span{
+        color: rgb(227, 227, 227);
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      p{
+        color: rgb(227, 227, 227);
+        font-size: 15px;
+      }
+    }
+  }
+}
